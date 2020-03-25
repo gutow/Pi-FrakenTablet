@@ -1,0 +1,1 @@
+This repository contains the code for webpages with instructions on making a portable artists drawing slate based on a Raspberry Pi. The original build was for use as an electronic whiteboard and for screen casting. See the website [here](https://gutow.github.io/Pi-FrakenTablet/Pi_based_artist_drawing_slate.html).
