@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Pi based artist drawing slate</title>
+  </head>
+  <body>
+    <h1>Inexpensive Raspberry Pi based tablet as whiteboard and for
+      screen casting</h1>
+    <p><i>By Jonathan Gutow (version 1.0, March 25, 2020)</i><br>
+    </p>
+    <p>For less than US$400 you can build a quite capable tablet that
+      works well as a projected whiteboard and is capable of producing
+      nice screen casts of what you write. Additionally, it has
+      capabilities that many more expensive tablets do not:<br>
+    </p>
+    <ol>
+      <li>It has a real operating system with full access to FOSS
+        software.</li>
+      <li>The tablet pen is pressure and tilt sensitive with the right
+        software (GIMP), so can be used as a real artists
+        drawing/painting display.</li>
+      <li>With the addition of a USB keyboard, mouse and an inexpensive
+        wire stand to prop up the display, it can serve as a decent home
+        computer that is reasonably portable.</li>
+      <li>If you add a USB power bank you have a portable artists
+        drawing display/tablet.<br>
+      </li>
+    </ol>
+    <table width="100%" cellspacing="2" cellpadding="2" border="1">
+      <tbody>
+        <tr>
+          <td valign="top" align="center">
+            <h4>Ingredients</h4>
+            <h3> </h3>
+          </td>
+          <td valign="top" align="center">
+            <h4>Cost</h4>
+            <p>US$ <br>
+              (as of March 2020)<br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Raspberry Pi 4B (2 or 4 GB, 3B+ will work,
+            but may have issues recording)</td>
+          <td valign="top">42 (2GB)<br>
+            62 (4Gb)*<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Power supply for Pi<br>
+          </td>
+          <td valign="top">12 - 14*<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">64 GB microSD card (be careful not all brands
+            work with Pis)<br>
+          </td>
+          <td valign="top">12 (Samsung Evo Select U3)*<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Artist's Display (Reasonable priced options
+            from XP-Pen and Huion.)<br>
+          </td>
+          <td valign="top">250 (XP-Pen 12Pro)<br>
+            300 (XP-Pen 13.3Pro)*<br>
+            250 (Huion Kamvas Pro12)<br>
+            280 (Huion Kamvas Pro13)<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">2 6 - 8" microHDMI to HDMI cables (second
+            output to projector)<br>
+          </td>
+          <td valign="top">9*<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">USB Headset (if recording audio for screen
+            casts)<br>
+          </td>
+          <td valign="top">33 (Mairdi, <span class="selection">
+              <meta http-equiv="content-type" content="text/html;
+                charset=UTF-8">
+              <span class="selection">Bigger Earmuff-Binaural)</span></span></td>
+        </tr>
+        <tr>
+          <td valign="top">Case for Pi<br>
+          </td>
+          <td valign="top">? (Built my own. Plastic cases ~10)<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">OS (Rasbian or Xubuntu*, see below)<br>
+          </td>
+          <td valign="top">0<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">"whiteboard" (Jarnal a Java application, see
+            below)<br>
+          </td>
+          <td valign="top">0<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Screen overlay annotator (Gromit-MPX, see
+            below)<br>
+          </td>
+          <td valign="top">0<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">Screen cast recording software (Vokoscreen,
+            see below)<br>
+          </td>
+          <td valign="top">0<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="right">
+            <h4>Total monetary outlay (no USB Headset)<br>
+            </h4>
+          </td>
+          <td valign="top">&nbsp;327 - 397<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>* Recommended (equivalent of what I am using).<br>
+    </p>
+    <h3>Recipe</h3>
+    <p>The easiest way to do this is buy a simple plastic case for the
+      Pi. This will leave you with a minimum of three cables to deal
+      with: power supply, cable to artists display, cable to projector
+      system. If you want a more elegant tablet and portable tablet see
+      my notes on building a case and powering it with a USB power bank.<br>
+    </p>
+    <h4>OS</h4>
+    <p><i>Rasbian (easiest install)</i></p>
+    <ol>
+      <li>You will need access to another computer or have purchased a
+        kit that includes a microSD card with NOOBS pre-installed. <br>
+      </li>
+      <li>For the install you also need a USB mouse, USB keyboard and a
+        monitor (artist display will work). Once set up you can use
+        without the mouse and keyboard. <br>
+      </li>
+      <li>If you did not buy a kit with NOOBS installed follow the
+        instructions for NOOBS install at <a
+href="https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up">RaspberryPi.org</a>.
+        <br>
+      </li>
+      <li>If you have a microSD card with NOOBS installed, you basically
+        have to put the SD card in, plug in the cables and boot it up.
+        It is still probably worth seeing the instructions.</li>
+    </ol>
+    <i>Xubuntu (recommended for more flexible OS)</i><i><br>
+    </i>
+    <ol>
+      <li>You will need access to another computer to do this. I have
+        successfully done this using *nix OSes (Linux and MacOS), your
+        mileage may vary if you try other OSes.</li>
+      <li>Follow <a
+href="https://ubuntu.com/tutorials/how-to-sdcard-ubuntu-server-raspberry-pi#1-overview">this
+
+          Ubuntu Tutorial</a> to get the server image installed on your
+        SD card. I currently recommend 18.04LTS 64 bit.</li>
+      <li>You then need to check some things in the hardware settings
+        before installing the Xubuntu desktop:</li>
+      <ol type="a">
+        <li>Bluetooth is disabled by default (as the Pi bluetooth is
+          flakey in my experience that is fine). If you really want it
+          enabled you need to modify files as instructed in the
+          directory microSDcard:/boot/firmware/nobtcfg.txt.</li>
+        <li>Set hdmi parameters so that you can plug and unplug some
+          monitors. Edit the usercfg.txt
+          (microSDcard:/boot/firmware/usercfg.txt to contain the
+          following lines.</li>
+      </ol>
+    </ol>
+    <p><code>#Overscan messes up most modern LCD/LED displays. Disable
+        it.<br>
+        disable_overscan=1<br>
+      </code></p>
+    <p><code>#It would be nice if monitors powered down when the Pi 4
+        sleeps the screen, but it is not implemented yet.<br>
+        # However, this command will make it work once it is
+        implemented.<br>
+        hdmi_blanking=1<br>
+      </code></p>
+    <p><code>#Enable both hdmi outputs even if a screen is not plugged
+        in. This will run your Pi a bit hotter and use more power.<br>
+        hdmi_force_hotplug:0=1<br>
+        hdmi_group:0=2#Only the Pi 4 has two hdmi ports<br>
+        hdmi_force_hotplug:1=1<br>
+        hdmi_group:1=2<br>
+        #The following may need to be adjusted depending on the
+        projectors available see the video settings at raspberrypi.org.<br>
+        # This is appropriate for a maximum resolution of 1680X1050 on
+        the second monitor.<br>
+        hdmi_mode:1=57</code></p>
+    <p><code>#GPU settings<br>
+        gpu_mem=124<br>
+        dtloverlay=vc-fkms-v3d<br>
+        core_freq_min=250</code><br>
+    </p>
+    <blockquote>
+      <ol start="3" type="a">
+        <li>Put the microSD card into the Pi. Hook up mouse, keyboard
+          and monitor (artists display) to hdmi port 0.</li>
+        <li>Boot up the Pi and create your user administrator account.</li>
+        <li>Connect to hardware ethernet. This is a big install. You do
+          not want any dropping out in the middle.<br>
+        </li>
+        <li>Install the desktop (the trailing '^' is correct).<br>
+        </li>
+      </ol>
+      <code>
+        <meta http-equiv="content-type" content="text/html;
+          charset=UTF-8">
+        <pre><code>sudo apt update
+sudo apt install xubuntu-core^</code></pre>
+      </code>
+      <ol start="7" type="a">
+        <li>When the install is complete you can reboot: <code>sudo
+            reboot now</code></li>
+        <li>On reboot you should get a graphical login.<br>
+        </li>
+      </ol>
+    </blockquote>
+    <h4>Software<br>
+    </h4>
+    <ol>
+      <li>Install "whiteboard" software Jarnal. Get Jarnal from <a
+          href="http://dklevine.com/general/software/tc1000/jarnal-down.htm">David
+
+          K. Levine's website</a> (the site really does not support
+        https!). Download jarnal-install.zip. Unzip into a local
+        directory for the user who will be using this.</li>
+      <li>Install a screen overlay/annotator. If you are going to want
+        to write over images, slides, etc. displayed on your screen you
+        will get better performance using a screen overlay/annotator
+        than putting images in the background of Jarnal. The downside is
+        that your notes will not be recorded if you are not recording
+        your screen. On the command line type "<code>sudo apt install
+          gromit-mpx</code>"<br>
+      </li>
+      <li>Install screen recording software. On the command line type "<code>sudo
+
+          apt install vokoscreen</code>".</li>
+      <li>If you are using this as a projected whiteboard you need to
+        set the screens to mirror mode in the Display settings.</li>
+      <ol type="a">
+        <li>Make sure the screen dimensions are correct for the
+          projector you are using. Things will not look good if the
+          projector has to rescale the image.</li>
+        <li>The default is to mirror with the upper left corners of the
+          screens aligned. If the projector screen is lower resolution
+          than your artists display (recommended are 1920 X 1080) the
+          right hand side and some of the bottom of the screen will not
+          be projected. I recommend dragging the toolbar (grab at far
+          left) to the bottom of the screen from its default top of the
+          screen position, to avoid wasting projected screen space.</li>
+      </ol>
+      <li>Some thoughts on using the software:</li>
+    </ol>
+    <blockquote>
+      <ul>
+        <li><i>Jarnal</i>: I set up a template with 4 blank pages in it
+          for a one hour lecture. The template should also be set up so
+          that it sized appropriately to show up on the projected
+          screen. I then open the template and save a copy named for the
+          date and class. When screen casting, I only record part of the
+          screen, leaving space for the recording software controls.</li>
+        <li><i>Vokoscreen</i>: This requires some fiddling. Exactly
+          which input will give you audio depends on your specific
+          microphone system. You also need to play with the microphone
+          placement to avoid breathing noises and other unwanted noise.<br>
+        </li>
+      </ul>
+    </blockquote>
+    <ol>
+    </ol>
+    <h4>Notes on building a portable version (coming soon).<br>
+    </h4>
+  </body>
+</html>
