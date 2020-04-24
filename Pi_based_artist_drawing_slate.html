@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -7,7 +7,7 @@
   <body>
     <h1>Inexpensive Raspberry Pi based tablet as whiteboard and for
       screen casting</h1>
-    <p><i>By Jonathan Gutow (version 1.0, March 25, 2020)</i><br>
+    <p><i>By Jonathan Gutow (version 1.1, April 23, 2020)</i><br>
     </p>
     <p>For less than US$400 you can build a quite capable tablet that
       works well as a projected whiteboard and is capable of producing
@@ -100,8 +100,7 @@
           </td>
         </tr>
         <tr>
-          <td valign="top">"whiteboard" (Jarnal a Java application, see
-            below)<br>
+          <td valign="top">"whiteboard" (Xournal++, see below)<br>
           </td>
           <td valign="top">0<br>
           </td>
@@ -166,6 +165,7 @@ href="https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up">Rasp
         mileage may vary if you try other OSes.</li>
       <li>Follow <a
 href="https://ubuntu.com/tutorials/how-to-sdcard-ubuntu-server-raspberry-pi#1-overview">this
+
 
           Ubuntu Tutorial</a> to get the server image installed on your
         SD card. I currently recommend 18.04LTS 64 bit.</li>
@@ -235,21 +235,34 @@ sudo apt install xubuntu-core^</code></pre>
     <h4>Software<br>
     </h4>
     <ol>
-      <li>Install "whiteboard" software Jarnal. Get Jarnal from <a
-          href="http://dklevine.com/general/software/tc1000/jarnal-down.htm">David
+      <li>Install "whiteboard" software. Xournal++ recommended (many
+        features including pressure sensitivity).</li>
+      <ol type="a">
+        <li>At present you will have to build Xournal++ on your Pi.
+          Follow the <a
+href="https://github.com/xournalpp/xournalpp/blob/master/readme/LinuxBuild.md">build
+            instructions in the GIT repository</a>. Build time on a 4GB
+          Pi4 is about 30 minutes.<br>
+        </li>
+        <li>An alternative is the Java application Jarnal. It is less
+          capable and less responsive. Get Jarnal from <a
+            href="http://dklevine.com/general/software/tc1000/jarnal-down.htm">David
 
-          K. Levine's website</a> (the site really does not support
-        https!). Download jarnal-install.zip. Unzip into a local
-        directory for the user who will be using this.</li>
+
+            K. Levine's website</a> (the site really does not support
+          https!). Download jarnal-install.zip. Unzip into a local
+          directory for the user who will be using this.</li>
+      </ol>
       <li>Install a screen overlay/annotator. If you are going to want
         to write over images, slides, etc. displayed on your screen you
         will get better performance using a screen overlay/annotator
-        than putting images in the background of Jarnal. The downside is
-        that your notes will not be recorded if you are not recording
-        your screen. On the command line type "<code>sudo apt install
-          gromit-mpx</code>"<br>
+        than putting images in the background of your "whiteboard" The
+        downside is that your notes will not be recorded if you are not
+        recording your screen. On the command line type "<code>sudo apt
+          install gromit-mpx</code>"<br>
       </li>
       <li>Install screen recording software. On the command line type "<code>sudo
+
 
           apt install vokoscreen</code>".</li>
       <li>If you are using this as a projected whiteboard you need to
@@ -270,12 +283,13 @@ sudo apt install xubuntu-core^</code></pre>
     </ol>
     <blockquote>
       <ul>
-        <li><i>Jarnal</i>: I set up a template with 4 blank pages in it
-          for a one hour lecture. The template should also be set up so
-          that it sized appropriately to show up on the projected
-          screen. I then open the template and save a copy named for the
-          date and class. When screen casting, I only record part of the
-          screen, leaving space for the recording software controls.</li>
+        <li><i>Whiteboard (Xournal++)</i> I set up a template with 4
+          blank pages in it for a one hour lecture. The template should
+          also be set up so that it sized appropriately to show up on
+          the projected screen. I then open the template and save a copy
+          named for the date and class. When screen casting, I only
+          record part of the screen, leaving space for the recording
+          software controls.</li>
         <li><i>Vokoscreen</i>: This requires some fiddling. Exactly
           which input will give you audio depends on your specific
           microphone system. You also need to play with the microphone
