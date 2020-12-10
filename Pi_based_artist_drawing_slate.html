@@ -7,7 +7,7 @@
   <body>
     <h1>Inexpensive Raspberry Pi based tablet as whiteboard and for
       screen casting</h1>
-    <p><i>By Jonathan Gutow (version 1.1, April 23, 2020)</i><br>
+    <p><i>By Jonathan Gutow (version 1.2, December 9, 2020)</i><br>
     </p>
     <p>For less than US$400 you can build a quite capable tablet that
       works well as a projected whiteboard and is capable of producing
@@ -37,15 +37,15 @@
           <td valign="top" align="center">
             <h4>Cost</h4>
             <p>US$ <br>
-              (as of March 2020)<br>
+              (as of Dec 2020)<br>
             </p>
           </td>
         </tr>
         <tr>
           <td valign="top">Raspberry Pi 4B (2 or 4 GB, 3B+ will work,
             but may have issues recording)</td>
-          <td valign="top">42 (2GB)<br>
-            62 (4Gb)*<br>
+          <td valign="top">35 (2GB)<br>
+            55 (4Gb)*<br>
           </td>
         </tr>
         <tr>
@@ -55,18 +55,18 @@
           </td>
         </tr>
         <tr>
-          <td valign="top">64 GB microSD card (be careful not all brands
+          <td valign="top">128 GB microSD card (be careful not all brands
             work with Pis)<br>
           </td>
-          <td valign="top">12 (Samsung Evo Select U3)*<br>
+          <td valign="top">16 (Samsung Evo Select U3)*<br>
           </td>
         </tr>
         <tr>
           <td valign="top">Artist's Display (Reasonable priced options
             from XP-Pen and Huion.)<br>
           </td>
-          <td valign="top">250 (XP-Pen 12Pro)<br>
-            300 (XP-Pen 13.3Pro)*<br>
+          <td valign="top">200 (XP-Pen 12Pro)<br>
+            255 (XP-Pen 13.3Pro)*<br>
             250 (Huion Kamvas Pro12)<br>
             280 (Huion Kamvas Pro13)<br>
           </td>
@@ -94,7 +94,7 @@
           </td>
         </tr>
         <tr>
-          <td valign="top">OS (Rasbian or Xubuntu*, see below)<br>
+          <td valign="top">OS (Rasbian or Lubuntu*, see below)<br>
           </td>
           <td valign="top">0<br>
           </td>
@@ -124,7 +124,7 @@
             <h4>Total monetary outlay (no USB Headset)<br>
             </h4>
           </td>
-          <td valign="top">&nbsp;327 - 397<br>
+          <td valign="top">&nbsp;275 - 350<br>
           </td>
         </tr>
       </tbody>
@@ -149,29 +149,27 @@
         without the mouse and keyboard. <br>
       </li>
       <li>If you did not buy a kit with NOOBS installed follow the
-        instructions for NOOBS install at <a
-href="https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up">RaspberryPi.org</a>.
+        instructions for NOOBS install at 
+<a href="https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up">RaspberryPi.org</a>.
         <br>
       </li>
       <li>If you have a microSD card with NOOBS installed, you basically
         have to put the SD card in, plug in the cables and boot it up.
         It is still probably worth seeing the instructions.</li>
     </ol>
-    <i>Xubuntu (recommended for more flexible OS)</i><i><br>
+    <i>Lubuntu (recommended for more flexible OS)</i><i><br>
     </i>
     <ol>
       <li>You will need access to another computer to do this. I have
         successfully done this using *nix OSes (Linux and MacOS), your
         mileage may vary if you try other OSes.</li>
       <li>Follow <a
-href="https://ubuntu.com/tutorials/how-to-sdcard-ubuntu-server-raspberry-pi#1-overview">this
-
-
+href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi">this
 
           Ubuntu Tutorial</a> to get the server image installed on your
-        SD card. I currently recommend 18.04LTS 64 bit.</li>
+        SD card. I currently recommend 20.04LTS 64 bit.</li>
       <li>You then need to check some things in the hardware settings
-        before installing the Xubuntu desktop:</li>
+        before installing the Lubuntu desktop:</li>
       <ol type="a">
         <li>Bluetooth is disabled by default (as the Pi bluetooth is
           flakey in my experience that is fine). If you really want it
@@ -205,10 +203,8 @@ href="https://ubuntu.com/tutorials/how-to-sdcard-ubuntu-server-raspberry-pi#1-ov
         the second monitor.<br>
         hdmi_mode:1=57</code></p>
     <p><code>#GPU settings<br>
-        gpu_mem=124<br>
         dtloverlay=vc-fkms-v3d<br>
-        core_freq_min=250</code><br>
-    </p>
+    </code></p>
     <blockquote>
       <ol start="3" type="a">
         <li>Put the microSD card into the Pi. Hook up mouse, keyboard
@@ -217,14 +213,12 @@ href="https://ubuntu.com/tutorials/how-to-sdcard-ubuntu-server-raspberry-pi#1-ov
         <li>Connect to hardware ethernet. This is a big install. You do
           not want any dropping out in the middle.<br>
         </li>
-        <li>Install the desktop (the trailing '^' is correct).<br>
+        <li>Install the desktop.<br>
         </li>
       </ol>
       <code>
-        <meta http-equiv="content-type" content="text/html;
-          charset=UTF-8">
         <pre><code>sudo apt update
-sudo apt install xubuntu-core^</code></pre>
+sudo apt install lubuntu-desktop</code></pre>
       </code>
       <ol start="7" type="a">
         <li>When the install is complete you can reboot: <code>sudo
@@ -239,22 +233,10 @@ sudo apt install xubuntu-core^</code></pre>
       <li>Install "whiteboard" software. Xournal++ recommended (many
         features including pressure sensitivity).</li>
       <ol type="a">
-        <li>At present you will have to build Xournal++ on your Pi.
-          Follow the <a
-href="https://github.com/xournalpp/xournalpp/blob/master/readme/LinuxBuild.md">build
-
-            instructions in the GIT repository</a>. Build time on a 4GB
-          Pi4 is about 30 minutes.<br>
-        </li>
-        <li>An alternative is the Java application Jarnal. It is less
-          capable and less responsive. Get Jarnal from <a
-            href="http://dklevine.com/general/software/tc1000/jarnal-down.htm">David
-
-
-
-            K. Levine's website</a> (the site really does not support
-          https!). Download jarnal-install.zip. Unzip into a local
-          directory for the user who will be using this.</li>
+        <li>You will need to get this from a special repository (ppa).
+        <p><code>sudo add-apt-repository ppa:apandada1/xournalpp-stable</br>
+sudo apt update</br>
+sudo apt install xournalpp</code></p></li>
       </ol>
       <li>Install a screen overlay/annotator. If you are going to want
         to write over images, slides, etc. displayed on your screen you
@@ -277,7 +259,7 @@ href="https://github.com/xournalpp/xournalpp/blob/master/readme/LinuxBuild.md">b
           projector has to rescale the image.</li>
         <li>The default is to mirror with the upper left corners of the
           screens aligned. If the projector screen is lower resolution
-          than your artists display (recommended are 1920 X 1080) the
+          than your artists display (recommended ones are 1920 X 1080) the
           right hand side and some of the bottom of the screen will not
           be projected. I recommend dragging the toolbar (grab at far
           left) to the bottom of the screen from its default top of the
@@ -287,13 +269,16 @@ href="https://github.com/xournalpp/xournalpp/blob/master/readme/LinuxBuild.md">b
     </ol>
     <blockquote>
       <ul>
-        <li><i>Whiteboard (Xournal++)</i> I set up a template with 4
+        <li><i>Whiteboard (Xournal++)</i> I set up a template with 6
           blank pages in it for a one hour lecture. The template should
           also be set up so that it sized appropriately to show up on
           the projected screen. I then open the template and save a copy
           named for the date and class. When screen casting, I only
           record part of the screen, leaving space for the recording
-          software controls.</li>
+          software controls. If I have slides to show I usually convert
+          them to .png files and load them into the template before class 
+          as images. Then I can write on them, move, enlarge or shrink them
+          during class.</li>
         <li><i>Vokoscreen</i>: This requires some fiddling. Exactly
           which input will give you audio depends on your specific
           microphone system. You also need to play with the microphone
