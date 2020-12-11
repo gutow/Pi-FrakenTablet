@@ -1,12 +1,12 @@
-<!doctype html/>
+<!DOCTYPE html/>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Pi based artist drawing slate</title>
   </head>
   <body>
-    <h1>Inexpensive Raspberry Pi based tablet as whiteboard and for
-      screen casting</h1>
+    <h1>Inexpensive Raspberry Pi based tablet as projected whiteboard or
+      for screen casting</h1>
     <p><i>By Jonathan Gutow (version 1.2, December 9, 2020)</i><br>
     </p>
     <p>For less than US$400 you can build a quite capable tablet that
@@ -30,11 +30,11 @@
     <table width="100%" cellspacing="2" cellpadding="2" border="1">
       <tbody>
         <tr>
-          <td valign="top" align="center">
+          <td align="center" valign="top">
             <h4>Ingredients</h4>
             <h3> </h3>
           </td>
-          <td valign="top" align="center">
+          <td align="center" valign="top">
             <h4>Cost</h4>
             <p>US$ <br>
               (as of Dec 2020)<br>
@@ -55,8 +55,8 @@
           </td>
         </tr>
         <tr>
-          <td valign="top">128 GB microSD card (be careful not all brands
-            work with Pis)<br>
+          <td valign="top">128 GB microSD card (be careful not all
+            brands work with Pis)<br>
           </td>
           <td valign="top">16 (Samsung Evo Select U3)*<br>
           </td>
@@ -120,7 +120,7 @@
           </td>
         </tr>
         <tr>
-          <td valign="top" align="right">
+          <td align="right" valign="top">
             <h4>Total monetary outlay (no USB Headset)<br>
             </h4>
           </td>
@@ -149,8 +149,8 @@
         without the mouse and keyboard. <br>
       </li>
       <li>If you did not buy a kit with NOOBS installed follow the
-        instructions for NOOBS install at 
-<a href="https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up">RaspberryPi.org</a>.
+        instructions for NOOBS install at <a
+href="https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up">RaspberryPi.org</a>.
         <br>
       </li>
       <li>If you have a microSD card with NOOBS installed, you basically
@@ -165,6 +165,7 @@
         mileage may vary if you try other OSes.</li>
       <li>Follow <a
 href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi">this
+
 
           Ubuntu Tutorial</a> to get the server image installed on your
         SD card. I currently recommend 20.04LTS 64 bit.</li>
@@ -204,7 +205,7 @@ href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi">t
         hdmi_mode:1=57</code></p>
     <p><code>#GPU settings<br>
         dtloverlay=vc-fkms-v3d<br>
-    </code></p>
+      </code></p>
     <blockquote>
       <ol start="3" type="a">
         <li>Put the microSD card into the Pi. Hook up mouse, keyboard
@@ -234,9 +235,11 @@ sudo apt install lubuntu-desktop</code></pre>
         features including pressure sensitivity).</li>
       <ol type="a">
         <li>You will need to get this from a special repository (ppa).
-        <p><code>sudo add-apt-repository ppa:apandada1/xournalpp-stable</br>
-sudo apt update</br>
-sudo apt install xournalpp</code></p></li>
+          <p><code>sudo add-apt-repository
+              ppa:apandada1/xournalpp-stable<br>
+              sudo apt update<br>
+              sudo apt install xournalpp</code></p>
+        </li>
       </ol>
       <li>Install a screen overlay/annotator. If you are going to want
         to write over images, slides, etc. displayed on your screen you
@@ -250,6 +253,7 @@ sudo apt install xournalpp</code></p></li>
 
 
 
+
           apt install vokoscreen</code>".</li>
       <li>If you are using this as a projected whiteboard you need to
         set the screens to mirror mode in the Display settings.</li>
@@ -259,26 +263,25 @@ sudo apt install xournalpp</code></p></li>
           projector has to rescale the image.</li>
         <li>The default is to mirror with the upper left corners of the
           screens aligned. If the projector screen is lower resolution
-          than your artists display (recommended ones are 1920 X 1080) the
-          right hand side and some of the bottom of the screen will not
-          be projected. I recommend dragging the toolbar (grab at far
-          left) to the bottom of the screen from its default top of the
-          screen position, to avoid wasting projected screen space.</li>
+          than your artists display (recommended artist displays are
+          1920 X 1080) the right hand side and some of the bottom of the
+          screen will not be projected.<br>
+        </li>
       </ol>
       <li>Some thoughts on using the software:</li>
     </ol>
     <blockquote>
       <ul>
-        <li><i>Whiteboard (Xournal++)</i> I set up a template with 6
+        <li><i>Whiteboard (Xournal++)</i>: I set up a template with 6
           blank pages in it for a one hour lecture. The template should
           also be set up so that it sized appropriately to show up on
           the projected screen. I then open the template and save a copy
           named for the date and class. When screen casting, I only
           record part of the screen, leaving space for the recording
           software controls. If I have slides to show I usually convert
-          them to .png files and load them into the template before class 
-          as images. Then I can write on them, move, enlarge or shrink them
-          during class.</li>
+          them to .png files and load them into the template before
+          class as images. Then I can write on them, move, enlarge or
+          shrink them during class.</li>
         <li><i>Vokoscreen</i>: This requires some fiddling. Exactly
           which input will give you audio depends on your specific
           microphone system. You also need to play with the microphone
@@ -288,7 +291,7 @@ sudo apt install xournalpp</code></p></li>
     </blockquote>
     <ol>
     </ol>
-    <h4>Notes on building a portable version (coming soon).<br>
+    <h4>Notes on building a portable version (under construction).<br>
     </h4>
   </body>
 </html>
